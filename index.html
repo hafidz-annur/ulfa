@@ -406,6 +406,15 @@
         integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
 
     <script>
+        function randomGallery() {
+            const numGal = $('.gallery-img .col').length;
+            const random = Math.floor((Math.random() * numGal) + 1);
+
+            $(".gallery-img .col img").removeClass('active')
+            $(".gallery-img .col img").eq(random).addClass('active');
+        }
+
+        setInterval(randomGallery, 1000);
 
         document.onreadystatechange = function () {
             const queryString = window.location.search;

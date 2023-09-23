@@ -158,8 +158,12 @@
     color: #fff;
   }
 
-  #countdown .card {
-    width: 90px !important;
+  #countdown div .card {
+    width: auto;
+    color: #fff !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 5px !important;
   }
 
   .event h4 {
@@ -220,6 +224,7 @@
     transition: all .3s ease-in-out;
   }
 
+  .gallery-img .col img.active,
   .gallery-img .col img:hover {
     transform: scale(1.1);
   }
