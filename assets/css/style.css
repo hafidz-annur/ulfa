@@ -8,7 +8,7 @@
   }
 
   .opening {
-    background: url('/assets/img/IMG_9203.jpg');
+    background: url('../img/IMG_9203.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -234,5 +234,5 @@
   }
 
   .swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
-    background: #5b3f49s;
+    background: #5b3f49;
   }
