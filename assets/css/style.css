@@ -222,3 +222,12 @@
   .gallery-img .col img:hover {
     transform: scale(1.1);
   }
+
+  .footer p {
+    font-size: 14px;
+  }
+
+  .footer h3 {
+    font-family: 'Rochester', cursive;
+    font-size: 2.5em; 
+  }
