@@ -407,10 +407,9 @@
 
     <script>
         function randomGallery() {
-            const numGal = $('.gallery-img .col').length;
-            const random = Math.floor((Math.random() * numGal) + 1);
-
             $(".gallery-img .col img").removeClass('active')
+            const random = Math.floor((Math.random() * 6));
+
             $(".gallery-img .col img").eq(random).addClass('active');
         }
 
