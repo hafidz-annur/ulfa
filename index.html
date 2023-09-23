@@ -7,14 +7,16 @@
     <title>Ilyas - Ulfa Wedding</title>
 
     <meta name="title" content="Ilyas - Ulfa Wedding" />
-<meta name="description" content="Dengan memohon rahmat dan ridlo Allah SWT, insyaAllah kami akan menyelenggarakan acara pernikahan kami" />
+    <meta name="description"
+        content="Dengan memohon rahmat dan ridlo Allah SWT, insyaAllah kami akan menyelenggarakan acara pernikahan kami" />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hafidz-annur.github.io/ulfa-ilyas/" />
-<meta property="og:title" content="Ilyas - Ulfa Wedding" />
-<meta property="og:description" content="Dengan memohon rahmat dan ridlo Allah SWT, insyaAllah kami akan menyelenggarakan acara pernikahan kami" />
-<meta property="og:image" content="https://hafidz-annur.github.io/ulfa-ilyas/assets/img/5.jpg" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hafidz-annur.github.io/ulfa-ilyas/" />
+    <meta property="og:title" content="Ilyas - Ulfa Wedding" />
+    <meta property="og:description"
+        content="Dengan memohon rahmat dan ridlo Allah SWT, insyaAllah kami akan menyelenggarakan acara pernikahan kami" />
+    <meta property="og:image" content="https://hafidz-annur.github.io/ulfa-ilyas/assets/img/5.jpg" />
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -55,7 +57,7 @@
 
                         <div class="opening-to text-center animate__animated animate__zoomIn animate__slow">
                             <h6 class="mb-1">Kepada Yth :</h6>
-                            <h5>Ismi Nur Aini</h5>
+                            <h5 id="tamu">Tamu Undangan</h5>
                             <div class="btn btn-outline-light rounded-4 px-3 py-0" onclick="openInvitation()">
                                 <i class="bi bi-envelope me-1"></i> Buka Undangan
                             </div>
@@ -99,7 +101,9 @@
                             class="mb-1 animate__animated animate__fadeInDown animate__slow">The Wedding of</h5>
                         <h3 data-aos="fade-left" data-aos-duration="1000"
                             class="animate__animated animate__fadeInLeft animate__slow">Ulfa & Ilyas</h3>
-                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Ulfa-Ilyas+Wedding&details=Dengan+memohon+rahmat+dan+ridlo+Allah+SWT%2C+insyaAllah+kami+akan+menyelenggarakan+acara+pernikahan+kami&location=Gedung+PMS%2C+Jl+Ir.+Juanda+No.47%0APurwodinigratan%2C+Kec.+Jebres%0AKota+Surakarta&dates=20240224T030000Z%2F20240224T050000Z" target="_blank" class="btn btn-outline-light animate__animated animate__fadeInUp animate__slow"
+                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Ulfa-Ilyas+Wedding&details=Dengan+memohon+rahmat+dan+ridlo+Allah+SWT%2C+insyaAllah+kami+akan+menyelenggarakan+acara+pernikahan+kami&location=Gedung+PMS%2C+Jl+Ir.+Juanda+No.47%0APurwodinigratan%2C+Kec.+Jebres%0AKota+Surakarta&dates=20240224T030000Z%2F20240224T050000Z"
+                            target="_blank"
+                            class="btn btn-outline-light animate__animated animate__fadeInUp animate__slow"
                             data-aos="fade-up" data-aos-duration="1000">
                             <i class="bi bi-calendar-check me-1"></i> Save the
                             Date
@@ -306,7 +310,8 @@
 
                     <div class=" position-absolute text-center w-100" style="bottom:30px; left: 0; z-index: 99;"
                         data-aos="fade-up" data-aos-duration="1000">
-                        <a href="https://maps.app.goo.gl/MzixPji2oR4HhCQG8" target="_blank" class="btn btn-outline-light py-1 rounded-pill">
+                        <a href="https://maps.app.goo.gl/MzixPji2oR4HhCQG8" target="_blank"
+                            class="btn btn-outline-light py-1 rounded-pill">
                             <strong>
                                 <i class="bi bi-map me-1"></i>
                                 Google Maps
@@ -379,7 +384,8 @@
                     <img src="assets/img/3.jpg" alt="" class="w-100">
                     <div class="position-absolute w-100 text-center text-white px-4 footer" style="top:10%;">
                         <p>
-                            Merupakan suatu kebahagiaan dan kehormatan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memeriahkan acara pernikahan kami, Terima Kasih
+                            Merupakan suatu kebahagiaan dan kehormatan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i
+                            berkenan hadir untuk memeriahkan acara pernikahan kami, Terima Kasih
                         </p>
                         <h3>Ulfa & Ilyas</h3>
                     </div>
@@ -399,9 +405,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
         integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
 
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const to = urlParams.get('to')
+
+        if(to) {
+            $('#tamu').html(to.replaceAll('-', ' '))
+        } else {
+            $('#tamu').html('Tamu Undangan')
+        }
+    </script>
 
     <script>
-        var x = document.getElementById("myAudio"); 
+        var x = document.getElementById("myAudio");
 
         new Splide('.splide', {
             autoplay: true,
