@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ilyas - Ulfa Wedding</title>
 
+    <link rel="shortcut icon" href="assets/img/wedding.png" type="image/x-icon">
     <meta name="title" content="Ilyas - Ulfa Wedding" />
     <meta name="description"
         content="Dengan memohon rahmat dan ridlo Allah SWT, insyaAllah kami akan menyelenggarakan acara pernikahan kami" />
@@ -211,7 +212,7 @@
                         <h3 class="text-white mb-3" style="font-family: 'Rochester', cursive; font-size:   1.9em;">
                             Ulfati Syarifah, S.Pd</h3>
                         <p class="text-white" style="font-size: 15px;">
-                            Putri Ketiga Dari <br>
+                            Putri Ketiga dari <br>
                             Bapak Agus Supriyanto, S.Pd & Ibu Hartini
                         </p>
                     </div>
@@ -236,7 +237,7 @@
                             style="font-family: 'Rochester', cursive; font-size:   1.9em;">Ilyas Sazally Rosyidi, S.Pd
                         </h3>
                         <p class="text-white text-end" style="font-size: 15px;">
-                            Putra Kedua Dari <br>
+                            Putra Kedua dari <br>
                             Bapak Slamet Riyanto, S.Pd & Ibu Sri Rahayu
                         </p>
                     </div>
@@ -385,7 +386,8 @@
                     <div class="position-absolute w-100 text-center text-white px-4 footer" style="top:10%;">
                         <p>
                             Merupakan suatu kebahagiaan dan kehormatan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i
-                            berkenan hadir untuk memeriahkan acara pernikahan kami, Terima Kasih
+                            berkenan hadir untuk memeriahkan acara pernikahan kami, Terima Kasih <br>
+                            Wassalamualaikum Warahmatullahi Wabarakatuh
                         </p>
                         <h3>Ulfa & Ilyas</h3>
                     </div>
@@ -413,7 +415,7 @@
             $(".gallery-img .col img").eq(random).addClass('active');
         }
 
-        setInterval(randomGallery, 1000);
+        setInterval(randomGallery, 3000);
 
         document.onreadystatechange = function () {
             const queryString = window.location.search;
@@ -472,31 +474,33 @@
             x.play()
         }
 
-        (function () {
-            const second = 1000,
-                minute = second * 60,
-                hour = minute * 60,
-                day = hour * 24;
+        function countDown() {
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
 
-            const countDown = new Date('2024-02-24 10:00:00').getTime(),
-                x = setInterval(function () {
+            const countDown = new Date('2024-02-24 10:00:00').getTime();
+            const x = setInterval(function () {
+                const now = new Date().getTime();
+                const distance = countDown - now;
 
-                    const now = new Date().getTime(),
-                        distance = countDown - now;
+                document.getElementById("days").innerText = Math.floor(distance / (day));
+                document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour));
+                document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute));
+                document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
 
-                    document.getElementById("days").innerText = Math.floor(distance / (day));
-                    document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour));
-                    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute));
-                    document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+                //do something later when date is reached
+                if (distance < 0) {
+                    document.getElementById("countdown").style.display = "none";
+                    clearInterval(x);
+                }
+                //seconds
+            }, 0)
+        }
 
-                    //do something later when date is reached
-                    if (distance < 0) {
-                        document.getElementById("countdown").style.display = "none";
-                        clearInterval(x);
-                    }
-                    //seconds
-                }, 0)
-        }());
+        countDown();
+
     </script>
 
     <script>
