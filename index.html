@@ -363,7 +363,7 @@
                                             <h5 class="mb-0">310301020986534</h5>
                                             <h6 class="mb-0" style="color: #d9d7d7;">ULFATI SYARIFAH</h6>
                                         </div>
-                                        <button class="btn btn-sm py-1 px-2 bg-white">
+                                        <button class="btn btn-sm py-1 px-2 bg-white" onclick="copyRek(310301020986534)">
                                             <i class="bi bi-copy me-2"></i> Copy
                                         </button>
                                     </div>
@@ -378,9 +378,9 @@
                                         </h6>
                                         <b style="font-size: 16px;">Kirim Hadiah</b>
                                         
-                                        <p class="mb-0" style="font-size: 14px;">Nama Penerima: Ulfati Syarifah</p>
-                                        <p class="mb-0" style="font-size: 14px;">No HP: +628985091005</p>
-                                        <p class="mb-0" style="font-size: 14px;">Alamat: Pucangsawit RT.04/07 Jebres Surakarta</p>
+                                        <p class="mb-0" style="font-size: 13px;">Nama Penerima: Ulfati Syarifah</p>
+                                        <p class="mb-0" style="font-size: 13px;">No HP: +628985091005</p>
+                                        <p class="mb-0" style="font-size: 13px;">Alamat: Pucangsawit RT.04/07 Jebres Surakarta</p>
                                     </div>
                                 </div>
                             </div>
@@ -446,6 +446,11 @@
         integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
 
     <script>
+        function copyRek(norek) {
+            navigator.clipboard.writeText(norek);
+
+            alert("Nomor Rekening Berhasil di Copy")
+        }
         function randomGallery() {
             $(".gallery-img .col img").removeClass('active')
             const random = Math.floor((Math.random() * 6));
