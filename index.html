@@ -354,33 +354,38 @@
                 <div class="col-md-4 p-0 position-relative px-4 py-4">
                     <div class="text-start">
                         <h4 class="my-4">
-                            <div class="card" style="background-image: url('assets/img/bg-bank.png'); background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 15px;">
+                            <div class="card"
+                                style="background-image: url('assets/img/bg-bank.png'); background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 15px;">
                                 <img src="assets/img/logo-bri.png" width="100px">
-                                
+
                                 <div class="card-body mt-4">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="text-white">
-                                            <h5 class="mb-0">310301020986534</h5>
+                                            <input type="text" id="norek" value="310301020986534"
+                                                style="background-color: transparent; box-shadow: none; border: none; color: white; padding: 0;"
+                                                disabled>
                                             <h6 class="mb-0" style="color: #d9d7d7;">ULFATI SYARIFAH</h6>
                                         </div>
-                                        <button class="btn btn-sm py-1 px-2 bg-white" onclick="copyRek(310301020986534)">
+                                        <button class="btn btn-sm py-1 px-2 bg-white" onclick="copyRek()">
                                             <i class="bi bi-copy me-2"></i> Copy
                                         </button>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="card mt-3" style="background-image: url('assets/img/white-bg.avif'); background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 15px;">
+                            <div class="card mt-3"
+                                style="background-image: url('assets/img/white-bg.avif'); background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 15px;">
                                 <div class="card-body">
                                     <div class="text-center">
                                         <h6 class="mb-1" style="font-size: 20px;">
                                             <i class="bi bi-gift"></i>
                                         </h6>
                                         <b style="font-size: 16px;">Kirim Hadiah</b>
-                                        
+
                                         <p class="mb-0" style="font-size: 13px;">Nama Penerima: Ulfati Syarifah</p>
                                         <p class="mb-0" style="font-size: 13px;">No HP: +628985091005</p>
-                                        <p class="mb-0" style="font-size: 13px;">Alamat: Pucangsawit RT.04 RW.07 Kec.Jebres Kota Surakarta</p>
+                                        <p class="mb-0" style="font-size: 13px;">Alamat: Pucangsawit RT.04 RW.07
+                                            Kec.Jebres Kota Surakarta</p>
                                     </div>
                                 </div>
                             </div>
@@ -446,10 +451,18 @@
         integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
 
     <script>
-        function copyRek(norek) {
-            navigator.clipboard.writeText(norek);
+        function copyRek() {
+            var copyText = document.getElementById("norek");
 
-            alert("Nomor Rekening Berhasil di Copy")
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+
+            // Alert the copied text
+            alert("Copied the text: " + copyText.value);
         }
         function randomGallery() {
             $(".gallery-img .col img").removeClass('active')
@@ -565,6 +578,7 @@
         const firebaseConfig = {
             apiKey: "AIzaSyB7sOWKCJH28QdfdxHgZ59613eTAiLSCZw",
             authDomain: "ulfa-wedding.firebaseapp.com",
+            databaseURL: "https://ulfa-wedding-default-rtdb.asia-southeast1.firebasedatabase.app",
             projectId: "ulfa-wedding",
             storageBucket: "ulfa-wedding.appspot.com",
             messagingSenderId: "576643929854",
